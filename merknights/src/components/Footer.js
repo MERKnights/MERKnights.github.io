@@ -21,7 +21,7 @@ return (
                 <nav className="flex items-center gap-4">
                     <Link className="hover:underline" href="/about" style={{ color: "var(--color-foreground)" }}>About</Link>
                     <Link className="hover:underline" href="/sponsors" style={{ color: "var(--color-foreground)" }}>Sponsors</Link>
-                    <a className="hover:underline" href="mailto:ucf.marine.robotics@gmail.com" style={{ color: "var(--color-foreground)" }}>Contact</a>
+                    <a className="hover:underline" href="mailto:ucf.marine.robotics@gmail.com" style={{ color: "var(--color-foreground)" }}>ucf.marine.robotics@gmail.com</a>
                 </nav>
             </div>
         </div>

@@ -11,10 +11,11 @@ export default function SponsorsPage() {
     <section className="space-y-4">
       <h1 className="text-3xl font-bold mb-6" style={{ color: "var(--color-secondary)" }}>Sponsors</h1>
       <p className="mb-8 opacity-80 max-w-2xl" style={{ color: "var(--color-accent)" }}>
-        We’re grateful to our sponsors whose support enables student innovation.
-        To become a sponsor, please contact us at <a className="underline" href="mailto:mec@ucf.edu">mec@ucf.edu</a>.
+        We’re looking for sponsors to help us with our mission of furthering student innovation.
+        To become a sponsor, please contact us at <a className="underline" href="mailto:ucf.marine.robotics@gmail.com">ucf.marine.robotics@gmail.com</a>.
       </p>
-      <div className="space-y-8">
+      <h2 className="text-xl font-semibold mb-3" style={{ color: "var(--color-secondary)" }}>Detailed Sponsorship Packet Coming Soon</h2>
+      {/* <div className="space-y-8">
         {tiers.map((t) => (
           <div key={t.name}>
             <h2 className="text-xl font-semibold mb-3" style={{ color: "var(--color-secondary)" }}>{t.name}</h2>
@@ -29,7 +30,7 @@ export default function SponsorsPage() {
             )}
           </div>
         ))}
-      </div>
+      </div> */}
     </section>
   );
 }

@@ -11,9 +11,10 @@ const bodyFont = Noto_Sans({
 });
 
 const headingFont = localFont({
-  src: "./fonts/revive-80-wide.ttf",
+  src: [
+    { path: "./fonts/revive-80-wide.ttf", weight: "400", style: "normal" },
+  ],
   variable: "--font-heading",
-  weight: "400 800",
   display: "swap",
 });
 

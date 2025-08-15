@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import socialLinks from "./socialLinks";
 
 const links = [
   { href: "/", label: "Home" },
@@ -79,7 +80,20 @@ return (
                     ))}
                 </ul>
             </nav>
-            <div className="text-lg" style={{ color: "var(--color-accent)" }}>University of Central Florida</div>
+            <div className="flex items-center gap-4">
+                {socialLinks.map((s) => (
+                    <a
+                        key={s.key}
+                        href={s.href}
+                        {...(s.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                        className="inline-flex items-center hover:opacity-80 transition-opacity"
+                        aria-label={s.ariaLabel}
+                        title={s.title}
+                    >
+                        <img src={s.iconSrc} alt={s.title} className="h-6 w-6 social-icon" />
+                    </a>
+                ))}
+            </div>
         </div>
     </header>
 );

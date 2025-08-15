@@ -23,9 +23,6 @@
   --color-muted: #131313;
   --color-card: #0f0f0f;
   --color-border: #2a2a2a;
-
-  /* Typography tokens */
-  --font-heading: "Revive 80 Wide", var(--font-body);
 }
 
 /* Optional: light mode overrides if user prefers light */
@@ -44,9 +41,43 @@ body {
     "Segoe UI Emoji";
 }
 
+/* Default paragraph style */
+p {
+  margin: 0 0 1.5rem 0; /* bottom spacing between paragraphs */
+  line-height: 1.7;   /* comfortable reading */
+  /* max-width: 300ch;    readable line length */
+  font-size: 1.2rem;
+}
+
 /* Headings use the display font when available */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading), var(--font-body), ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica Neue, Arial;
+}
+
+/* Heading scale and color (UCF Gold) */
+h1 {
+  color: var(--color-secondary); /* UCF Metallic Gold */
+  font-weight: 800;
+  font-size: 4.0rem; /* ~40px */
+  line-height: 1.2;
+  padding-block: 0.3em; /* vertical padding */
+}
+
+h2 {
+  color: var(--color-secondary);
+  font-weight: 700;
+  font-size: 3rem; /* ~32px */
+  line-height: 1.3;
+  padding-block: 0.3em;
+}
+
+h3 {
+  font-family: var(--font-body);
+  color: var(--color-secondary);
+  font-weight: 900;
+  font-size: 1.5rem; /* ~24px */
+  line-height: 1.35;
+  padding-block: 0.3em;
 }
 
 /* Subtle helpers for cards and borders */
@@ -61,8 +92,31 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Make black-on-transparent SVGs appear white in dark mode */
-/* @media (prefers-color-scheme: dark) {
-  .trident-dark-invert {
-    filter: invert(1);
+/* Social icons are black SVGs; invert them on dark backgrounds */
+.social-icon {
+  filter: invert(1);
+}
+
+/* In light mode, keep them black */
+@media (prefers-color-scheme: light) {
+  .social-icon {
+    filter: none;
   }
-} */
+}
+
+/* Utility: make an element span edge-to-edge ignoring parent container padding */
+.full-bleed {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+/* Reusable paragraph style for muted accent text */
+.accent-paragraph {
+  margin-bottom: 1.5rem; /* mb-6 */
+  color: var(--color-accent);
+  font-size: 1.2rem;
+}
