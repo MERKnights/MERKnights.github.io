@@ -14,7 +14,7 @@ export default function Home() {
           height={1600}
           priority
           sizes="100vw"
-          className="w-screen h-auto opacity-60 select-none"
+          className="w-full h-auto opacity-60 select-none"
         />
 
         {/* Fade/gradient overlay for readability */}
@@ -25,7 +25,7 @@ export default function Home() {
           <h1>
             Marine Environment Robotics @ UCF
           </h1>
-          <p style={{ color: "var(--color-accent)" }}>
+          <p className="hidden sm:block" style={{ color: "var(--color-accent)" }}>
             Building the future of marine robotics through hands-on engineering, research, and competition.
           </p>
         </div>

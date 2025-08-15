@@ -63,6 +63,12 @@ body {
     "Segoe UI Emoji";
 }
 
+/* Prevent accidental horizontal scroll across the site (full-bleed, wide images, etc.) */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 /* Default paragraph style */
 p {
   margin: 0 0 1.5rem 0; /* bottom spacing between paragraphs */

@@ -6,7 +6,7 @@ export const metadata = { title: "MATE ROV" };
 export default function MatePage() {
 return (
     <section>
-        <div className="flex justify-between items-start">
+        <div className="flex flex-col md:flex-row md:justify-between items-start gap-4">
             <div className="flex-1 space-y-4">
                 <h1>MATE ROV</h1>
                 <p>
@@ -40,12 +40,13 @@ return (
                     <li>- Testing and validation of ROV systems</li>
                 </ul>
             </div>
-            <div className="ml-6 flex-shrink-0">
+        <div className="md:ml-6 md:flex-shrink-0 self-center md:self-start max-w-full">
                 <Image
                     src="/logos/NeptuneKnights/NeptuneKnights_FullLogo_MetallicGoldTransparentBackground.png"
-                    width={500}
-                    height={500}
+            width={400}
+            height={400}
                     alt="Neptune Knights Full Gear"
+            className="h-auto w-full max-w-[320px] md:max-w-[400px]"
                 />
             </div>
         </div>
