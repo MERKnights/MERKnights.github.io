@@ -23,6 +23,12 @@
   --color-muted: #131313;
   --color-card: #0f0f0f;
   --color-border: #2a2a2a;
+
+  /* Subtle grid background tokens */
+  --grid-size: 32px;                 /* distance between minor lines */
+  --grid-major-multiple: 6;          /* every N lines draw a darker line */
+  --grid-line: rgba(255, 255, 255, 0.04);       /* minor grid line on dark */
+  --grid-line-major: rgba(255, 255, 255, 0.06); /* major grid line on dark */
 }
 
 /* Optional: light mode overrides if user prefers light */
@@ -30,11 +36,27 @@
   :root {
     --background: #ffffff;
     --foreground: #171717;
+    /* Lighter grid lines for light mode */
+    --grid-line: rgba(0, 0, 0, 0.05);
+    --grid-line-major: rgba(0, 0, 0, 0.08);
   }
 }
 
 body {
-  background: var(--background);
+  /* Base color */
+  background-color: var(--background);
+  /* Subtle grid composed of minor and major lines */
+  background-image:
+    /* minor horizontal */ linear-gradient(var(--grid-line) 1px, transparent 1px),
+    /* minor vertical */   linear-gradient(90deg, var(--grid-line) 1px, transparent 1px),
+    /* major horizontal */ linear-gradient(var(--grid-line-major) 1px, transparent 1px),
+    /* major vertical */   linear-gradient(90deg, var(--grid-line-major) 1px, transparent 1px);
+  background-size:
+    var(--grid-size) var(--grid-size),
+    var(--grid-size) var(--grid-size),
+    calc(var(--grid-size) * var(--grid-major-multiple)) calc(var(--grid-size) * var(--grid-major-multiple)),
+    calc(var(--grid-size) * var(--grid-major-multiple)) calc(var(--grid-size) * var(--grid-major-multiple));
+  background-position: top left;
   color: var(--foreground);
   font-family: var(--font-body), ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
     Noto Sans, Ubuntu, Cantarell, Helvetica Neue, Arial, "Apple Color Emoji",
@@ -122,6 +144,30 @@ h3 {
   margin-bottom: 1.5rem; /* mb-6 */
   color: var(--color-accent);
   font-size: 1.2rem;
+}
+
+/* Nav helpers to reduce inline styles */
+.site-header {
+  background-color: color-mix(in oklab, var(--color-background) 85%, transparent);
+  border-color: var(--color-border);
+}
+
+.nav-link {
+  padding: 0.25rem 0.5rem; /* px-2 py-1 */
+  border-radius: 0.25rem;  /* rounded */
+  color: inherit;
+}
+
+.nav-link--active {
+  color: var(--color-primary);
+  font-weight: 600; /* font-medium */
+}
+
+.menu-dropdown {
+  background-color: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: 0.5rem; /* rounded */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.25); /* shadow-lg */
 }
 
 .link {

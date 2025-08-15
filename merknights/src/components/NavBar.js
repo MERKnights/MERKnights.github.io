@@ -20,10 +20,15 @@ const links = [
 ];
 
 export default function NavBar() {
-  const pathname = usePathname();
+    const pathname = usePathname();
 
-return (
-    <header className="border-b sticky top-0 z-50 backdrop-blur" style={{ backgroundColor: "color-mix(in oklab, var(--color-background) 85%, transparent)", borderColor: "var(--color-border)" }}>
+    const isActive = (href) => {
+        if (href === "/") return pathname === "/";
+        return pathname === href || pathname.startsWith(href + "/");
+    };
+
+    return (
+        <header className="border-b sticky top-0 z-50 backdrop-blur site-header">
         <div className="container mx-auto px-4 py-3 flex items-center gap-6">
             <Link href="/" className="flex items-center" aria-label="MERKnights @ UCF">
                     <img
@@ -39,24 +44,18 @@ return (
                             {l.children ? (
                                 <>
                                     <Link
-                                        href={l.href}
-                                        className={`px-2 py-1 rounded ${
-                                            pathname === l.href ? "font-medium" : ""
-                                        }`}
-                                        style={{ color: pathname === l.href ? "var(--color-primary)" : undefined }}
+                                                                                href={l.href}
+                                                                                className={`nav-link ${isActive(l.href) ? "nav-link--active" : ""}`}
                                     >
                                         {l.label}
                                     </Link>
-                                    <div className="absolute left-0 mt-2 hidden group-hover:block rounded shadow-lg" style={{ backgroundColor: "var(--color-card)", border: "1px solid var(--color-border)" }}>
-                                        <ul className="py-2">
+                                                                        <div className="absolute left-0 top-full pt-2 hidden group-hover:block menu-dropdown">
+                                                                                <ul className="py-2 min-w-[10rem]">
                                             {l.children.map((c) => (
                                                 <li key={c.href}>
                                                     <Link
-                                                        href={c.href}
-                                                        className={`block whitespace-nowrap px-4 py-2 ${
-                                                            pathname === c.href ? "font-medium" : ""
-                                                        }`}
-                                                        style={{ color: pathname === c.href ? "var(--color-primary)" : undefined }}
+                                                                                                                href={c.href}
+                                                                                                                className={`block whitespace-nowrap px-4 py-2 ${isActive(c.href) ? "nav-link--active" : ""}`}
                                                     >
                                                         {c.label}
                                                     </Link>
@@ -66,13 +65,10 @@ return (
                                     </div>
                                 </>
                             ) : (
-                                <Link
-                                    href={l.href}
-                                    className={`px-2 py-1 rounded ${
-                                        pathname === l.href ? "font-medium" : ""
-                                    }`}
-                                    style={{ color: pathname === l.href ? "var(--color-primary)" : undefined }}
-                                >
+                                                                <Link
+                                                                        href={l.href}
+                                                                        className={`nav-link ${isActive(l.href) ? "nav-link--active" : ""}`}
+                                                                >
                                     {l.label}
                                 </Link>
                             )}
@@ -96,5 +92,5 @@ return (
             </div>
         </div>
     </header>
-);
+    );
 }
