@@ -123,3 +123,8 @@ h3 {
   color: var(--color-accent);
   font-size: 1.2rem;
 }
+
+.link {
+  margin-bottom: 1.5rem;
+  color: #ffca06; /* UCF Bright Gold */
+}

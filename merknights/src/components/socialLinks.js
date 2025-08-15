@@ -1,10 +1,12 @@
 // Centralized social links for the navbar and elsewhere.
 // Update the hrefs and ensure corresponding icons exist in /public/logos.
 
+import { DISCORD_INVITE } from "@/config/links";
+
 const socialLinks = [
   {
     key: "discord",
-    href: "https://discord.gg/Bj8UrN6ktP",
+  href: DISCORD_INVITE,
     title: "Discord",
     ariaLabel: "Discord",
     iconSrc: "/logos/DiscordLogo.svg",

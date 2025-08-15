@@ -6,7 +6,7 @@ import socialLinks from "./socialLinks";
 
 const links = [
   { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
+  { href: "/join", label: "Join" },
   {
     href: "/competitions",
     label: "Competitions",

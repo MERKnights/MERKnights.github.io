@@ -7,7 +7,7 @@ const comps = [
   {
     href: "/competitions/mate",
     title: "MATE ROV",
-    blurb: "Remotely Operated Vehicle competition focused on underwater tasks.",
+    blurb: "Remotely Operated Vehicle competition",
     image: "/images/2024MATECompetitionTeam.jpg", // Replace with your preferred image
   },
   {
@@ -20,7 +20,7 @@ const comps = [
     href: "/competitions/roboboat",
     title: "RoboBoat",
     blurb: "Autonomous Surface Vehicle competition.",
-    image: "/images/2024RoboboatInWater.jpg", // Add when available
+    image: "/images/2025RoboboatInWater.jpg", // Add when available
   },
 ];
 
@@ -63,7 +63,7 @@ export default function CompetitionsPage() {
                 <h3>
                   {c.title}
                 </h3>
-                <p>{c.blurb}</p>
+                <p style={{ color: "#ffffff" }}>{c.blurb}</p>
               </div>
             </Link>
           </li>

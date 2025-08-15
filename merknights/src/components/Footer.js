@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { DISCORD_INVITE } from "@/config/links";
 
 export default function Footer() {
 return (
@@ -19,9 +20,7 @@ return (
                 </div>
 
                 <nav className="flex items-center gap-4">
-                    <Link className="hover:underline" href="/about" style={{ color: "var(--color-foreground)" }}>About</Link>
-                    <Link className="hover:underline" href="/sponsors" style={{ color: "var(--color-foreground)" }}>Sponsors</Link>
-                    <a className="hover:underline" href="mailto:ucf.marine.robotics@gmail.com" style={{ color: "var(--color-foreground)" }}>ucf.marine.robotics@gmail.com</a>
+                    <a className="hover:underline" href={DISCORD_INVITE} target="_blank" rel="noopener noreferrer">Join our Discord</a>
                 </nav>
             </div>
         </div>

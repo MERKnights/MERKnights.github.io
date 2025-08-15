@@ -22,33 +22,16 @@ export default function Home() {
 
         {/* Foreground content */}
         <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center px-6 py-10 sm:px-10">
-          <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight">
+          <h1>
             Marine Environment Robotics @ UCF
           </h1>
-          <p className="mt-4 max-w-2xl mx-auto text-base sm:text-xl opacity-90" style={{ color: "var(--color-accent)" }}>
+          <p style={{ color: "var(--color-accent)" }}>
             Building the future of marine robotics through hands-on engineering, research, and competition.
           </p>
-
-          {/* <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
-            <Link
-              className="px-5 py-3 rounded font-medium shadow-sm hover:opacity-95 focus:outline-none focus:ring-2 focus:ring-offset-2"
-              href="/competitions"
-              style={{ backgroundColor: "var(--color-primary)", color: "#0a0a0a" }}
-            >
-              Explore Competitions
-            </Link>
-            <Link
-              className="px-5 py-3 rounded border hover:bg-white/5 focus:outline-none focus:ring-2 focus:ring-offset-2"
-              href="/about"
-              style={{ borderColor: "var(--color-border)" }}
-            >
-              Learn More
-            </Link>
-          </div> */}
         </div>
       </section>
 
-      {/* Supporting copy */}
+
       <section className="text-center space-y-4">
         <p>
           The Marine Environment Robotics club at the University of Central Florida is dedicated to making robotics

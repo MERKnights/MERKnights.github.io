@@ -9,28 +9,12 @@ const tiers = [
 export default function SponsorsPage() {
   return (
     <section className="space-y-4">
-      <h1 className="text-3xl font-bold mb-6" style={{ color: "var(--color-secondary)" }}>Sponsors</h1>
-      <p className="mb-8 opacity-80 max-w-2xl" style={{ color: "var(--color-accent)" }}>
+      <h1>Sponsors</h1>
+      <p className="accent-text">
         We’re looking for sponsors to help us with our mission of furthering student innovation.
         To become a sponsor, please contact us at <a className="underline" href="mailto:ucf.marine.robotics@gmail.com">ucf.marine.robotics@gmail.com</a>.
       </p>
-      <h2 className="text-xl font-semibold mb-3" style={{ color: "var(--color-secondary)" }}>Detailed Sponsorship Packet Coming Soon</h2>
-      {/* <div className="space-y-8">
-        {tiers.map((t) => (
-          <div key={t.name}>
-            <h2 className="text-xl font-semibold mb-3" style={{ color: "var(--color-secondary)" }}>{t.name}</h2>
-            {t.items.length === 0 ? (
-              <div className="text-sm opacity-60" style={{ color: "var(--color-accent)" }}>Your logo here</div>
-            ) : (
-              <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-                {t.items.map((s) => (
-                  <li key={s.name} className="card p-4">{s.name}</li>
-                ))}
-              </ul>
-            )}
-          </div>
-        ))}
-      </div> */}
+      <h2>Detailed Sponsorship Packet Coming Soon</h2>
     </section>
   );
 }
